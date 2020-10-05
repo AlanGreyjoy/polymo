@@ -1,11 +1,11 @@
 const jwt = require('jsonwebtoken')
-const models = require('../models/index')
-const User = models.User;
+const db = require('../models')
+const Player = db.Player
 const bcrypt = require('bcrypt')
 
 exports.Login = (data) => {
     return new Promise((resolve, reject) =>{
-        User.findOne({
+        Player.findOne({
             where:{
                 email: data.email
             }
@@ -18,7 +18,7 @@ exports.Login = (data) => {
                 emailFound.Online = true
                 emailFound.update()
                 let token = jwt.sign(emailFound.Email, 'k33p3m0ut#')
-                return resolve({user: emailFound, token: token})
+                return resolve({player: emailFound, token: token})
             }else{
                 return reject({success: false, message: 'Password was incorrect. Please try again!'})
             }

@@ -13,7 +13,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('Users', [{
+    await queryInterface.bulkInsert('Players', [{
       Username: 'NalaLockspur',
       Password: bcrypt.hashSync('a3s0m3m@n!', 8),
       Email: 'alanspurlock@hotmail.com',
@@ -35,6 +35,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('Users', {})
+    await queryInterface.bulkDelete('Players', {})
   }
 };

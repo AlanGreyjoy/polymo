@@ -1,5 +1,5 @@
 const models = require("../models/index")
-const User = models.User
+const Player = models.Player
 const CharacterModel = models.Character
 
 module.exports = class Character{
@@ -29,17 +29,14 @@ module.exports = class Character{
     }
 
     Create = (data, socket) => {
-        console.log('create character')
-        console.log(data)
-        if(!data.user.username){
+        if(!data.player.username){
             return
         }
-
-        User.findOne({
+        Player.findOne({
             where:{
-                Username: data.user.username
+                Username: data.player.username
             }
-        }).then(user=>{
+        }).then(player=>{
             CharacterModel.findOne({
                 where:{
                     Name: data.name
@@ -47,7 +44,7 @@ module.exports = class Character{
             }).then(created=>{
                 if(!created){
                     CharacterModel.create({
-                        UserId: user.id,
+                        PlayerId: player.id,
                         Name: data.name,
                         Type: data.type,
                     }).then(characterSave=>{

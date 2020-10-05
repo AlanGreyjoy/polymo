@@ -1,35 +1,25 @@
 let Faction = require('./Faction')
 let models = require('../models/index')
-let User = models.User
 let Character = models.Character
 
 module.exports = class Player {
     constructor() {
-        this.user = {}
+        this.player = {}
         this.characters = []
-        this.money = {
-            gold: 0,
-            silver: 0,
-            bronze: 0
-        }
         this.friends = []
-        this.worldPosition = {
-            x: 0,
-            y: 0,
-            z: 0
-        }
-        this.worldRotation = {
-            x: 0,
-            y: 0,
-            z: 0
-        }
+    }
+
+    GetPlayerInfo = (data) => {
+
     }
 
     GetPlayerCharacters = (data) => {
+        console.log('get player chars')
+        console.log(data)
         return new Promise((resolve => {
             Character.findAll({
                 where:{
-                    UserId: data.id
+                    PlayerId: data.id
                 }
             }).then(chars=>{
                 return resolve(chars)

@@ -11,10 +11,6 @@ module.exports = {
       PlayerId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references:{
-          model: 'Player',
-          key: 'id'
-        }
       },
       Name: {
         type: Sequelize.STRING,
@@ -59,10 +55,6 @@ module.exports = {
       },
       WorldId: {
         type: Sequelize.INTEGER,
-        references: {
-          model: 'World',
-          key: 'id'
-        }
       },
       createdAt: {
         allowNull: false,
