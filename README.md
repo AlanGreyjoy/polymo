@@ -1,8 +1,54 @@
 # Polymo
 
-A MMORPG NODE.JS server!
+A multiplayer game server built with Node.js, Express, Socket.IO, and TypeScript.
 
-It's all jumbled up right now. Testing out stuff and really making sure this will work as I think it should.
+## Project Status
 
-Once I find the "flow", i'll start moving everything to be a little more OOP.... even though I hate OOP and the entire
-concept of that garbage is dying.
+This project is currently in development. The codebase has been converted from JavaScript to TypeScript and the database layer has been prepared for a future Supabase implementation.
+
+## Setup
+
+1. Install dependencies:
+
+   ```
+   npm install
+   ```
+
+2. Build the project:
+
+   ```
+   npm run build
+   ```
+
+3. Start the development server:
+
+   ```
+   npm run dev
+   ```
+
+4. For production:
+   ```
+   npm start
+   ```
+
+## Features
+
+- Real-time multiplayer communication using Socket.IO
+- Player authentication
+- Character creation and management
+- Position updates for characters
+
+## Tech Stack
+
+- Node.js
+- TypeScript
+- Express
+- Socket.IO
+- JWT for authentication
+
+## Future Improvements
+
+- Implement Supabase for database storage
+- Add more game features
+- Improve error handling
+- Add unit tests
